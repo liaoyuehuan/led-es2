@@ -1,0 +1,12 @@
+[2018-04-17 07:30:57 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:31:15 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:08 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:08 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:08 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:14 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:14 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:15 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:15 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:15 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:15 *13185.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
+[2018-04-17 07:32:21 *13206.3]	WARNING	swServer_tcp_send (ERROR 1202): More than the output buffer size[0], please use the sendfile.
