@@ -23,7 +23,7 @@ abstract class BaseController extends Controller
     {
         foreach ($this->filterList as $actionFilterClass) {
             $actionFilter = $actionFilterClass::getInstance();
-            $canContinue = $actionFilter->requestHandler($this->request(), $this->response(), $param);
+            $canContinue = $actionFilter->requestHandler($this->request(), $this->response());
             if ($canContinue === false) {
                 return false;
             }

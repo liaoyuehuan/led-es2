@@ -14,6 +14,7 @@ use App\Filter\Action\TokenCheckFilter;
 use App\Http\Result;
 use App\HttpController\BaseController;
 use App\Methods\MethosUtil;
+use App\Service\ConfigService;
 use App\Utils\IpUtils;
 use EasySwoole\Core\Http\Message\Status;
 
@@ -34,6 +35,7 @@ class Router extends BaseController
         $param = $this->request()->getRequestParam();
         try {
             $ip = IpUtils::getIp($this->request());
+            $this->request();
             $param['ip'] = $ip;
             $data = MethosUtil::getInstance()->callMethod($param['method'],$param);
             $this->writeJsonWithNoCode(Status::CODE_OK, Result::makeSuccess($data));
@@ -43,4 +45,6 @@ class Router extends BaseController
             $this->writeJsonWithNoCode(Status::CODE_OK, Result::makeError(10003, $e->getMessage()));
         }
     }
+
+
 }

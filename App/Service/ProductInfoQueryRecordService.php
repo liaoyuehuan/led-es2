@@ -32,7 +32,15 @@ class ProductInfoQueryRecordService extends AbstractService implements IProductI
         $bean->setIp($ip);
         $bean->setCountryCode(IpUtils::getCountryCodeByIp($ip));
         $bean->setQueryTime(time());
+        $ipInfo =  ipUtils::getIpInfo($ip);
+        if ($ipInfo && $ipInfo['code'] == 0){
+            $ipDate = $ipInfo['data'];
+            $bean->setCountry($ipDate['country']);
+            $bean->setProvince($ipDate['region']);
+            $bean->setCity($ipDate['city']);
+        }
         return $this->productInfoQueryRecordModel->insert($bean);
     }
+
 
 }

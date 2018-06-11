@@ -40,6 +40,7 @@ class MethosUtil
         $this->maps = [
             'startrc.flushpup.querysnrequesttimes' => [Flushpup::class => 'querySnRequestTimes'],
             'startrc.flushpup.liveMessage' => [Flushpup::class => 'liveMessage'],
+            'startrc.flushpup.getimglist' => [Flushpup::class => 'getImgList'],
         ];
     }
 

@@ -10,15 +10,16 @@ namespace App\Utils;
 
 
 use EasySwoole\Core\Http\Request;
+use EasySwoole\Core\Swoole\Coroutine\Client\Http;
 
 class IpUtils
 {
     public static function getIp(Request $request)
     {
-        if ($request->getHeader('x-real-ip')) {
-            return $request->getHeader('x-real-ip')[0];
-        } elseif ($request->getHeader('x-forwared-for')) {
+        if ($request->getHeader('x-forwared-for')) {
             return $request->getHeader('x-forwared-for')[0];
+        } else if ($request->getHeader('x-real-ip')) {
+            return $request->getHeader('x-real-ip')[0];
         } else {
             return $request->getServerParams()['remote_addr'];
         };
@@ -36,5 +37,17 @@ class IpUtils
     {
         $ip = self::getIp($request);
         return self::getCountryCodeByIp($ip);
+    }
+
+    public static function getIpInfo($ip): ? array
+    {
+        $client = new Http('http://ip.taobao.com/service/getIpInfo.php');
+        $client->setGet(['ip' => $ip]);
+        $response = $client->exec();
+        if (!empty($response['body'])){
+            return json_decode($response['body'],true);
+        } else {
+            return  null;
+        }
     }
 }

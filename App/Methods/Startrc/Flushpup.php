@@ -13,8 +13,10 @@ use App\Service\Interfaces\ILiveMessageService;
 use App\Service\LiveMessageService;
 use App\Service\ProductInfoQueryRecordService;
 use App\Service\ProductInfoService;
+use App\Utils\FileUtils;
 use EasySwoole\Core\Utility\Validate\Validate;
 use EasySwoole\Core\Utility\Validate\Rules;
+use Swoole\Http\Request;
 
 
 class Flushpup
@@ -108,6 +110,16 @@ class Flushpup
         } else {
             throw new \RuntimeException('system error');
         }
+    }
 
+    public function getImgList($param)
+    {
+        $gateway = 'http://apis.ledpropeller.com/';
+        $img_dir = '/var/www/admin_led/public/assets/flushpop_imgs';
+        $img_list = FileUtils::get_dir_files($img_dir,'/\.(lim|bmp|jpg|png|gif|jpeg)$/');
+        $img_list = array_map(function ($path) use ($gateway) {
+            return $gateway . substr($path,strlen('/var/www/admin_led/public') );
+        }, $img_list);
+        return ['img_list' => $img_list];;
     }
 }

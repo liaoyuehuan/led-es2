@@ -37,6 +37,22 @@ class ProductInfoQueryRecord extends BaseBean
     protected $country_code;
 
     /**
+     * @var string
+     */
+    protected $country;
+
+    /**
+     * @var string
+     */
+    protected $province;
+
+    /**
+     * @var string
+     */
+    protected $city;
+
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -87,7 +103,7 @@ class ProductInfoQueryRecord extends BaseBean
     /**
      * @return int
      */
-    public function getQueryTime(): int
+    public function getQueryTime(): ?int
     {
         return $this->query_time;
     }
@@ -95,7 +111,7 @@ class ProductInfoQueryRecord extends BaseBean
     /**
      * @param int $query_time
      */
-    public function setQueryTime(int $query_time): void
+    public function setQueryTime(?int $query_time): void
     {
         $this->query_time = $query_time;
     }
@@ -103,7 +119,7 @@ class ProductInfoQueryRecord extends BaseBean
     /**
      * @return string
      */
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->country_code;
     }
@@ -111,9 +127,59 @@ class ProductInfoQueryRecord extends BaseBean
     /**
      * @param string $country_code
      */
-    public function setCountryCode(string $country_code): void
+    public function setCountryCode(?string $country_code): void
     {
         $this->country_code = $country_code;
     }
+
+    /**
+     * @return string
+     */
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param string $country
+     */
+    public function setCountry(?string $country): void
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvince(): ?string
+    {
+        return $this->province;
+    }
+
+    /**
+     * @param string $province
+     */
+    public function setProvince(?string $province): void
+    {
+        $this->province = $province;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity(?string $city): void
+    {
+        $this->city = $city;
+    }
+
+
 
 }

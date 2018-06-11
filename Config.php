@@ -51,9 +51,7 @@ return [
     'EXTEND' => [
         'TOKEN' => 'e5c742a835d5c8f1e0cf33a989fe8669'
     ],
-    'METHOD_MAP' => [
-        'tartrc.flushpup' => [
-            ''
-        ]
+    'RESPONSE' => [
+        'HEADER' => ['Content-Type','text/html;charset=utf-8']
     ]
 ];
